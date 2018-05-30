@@ -28,8 +28,7 @@ app.use((req, res, next) => {
 app.get('/',(req,res) => {
   res.render('home.hbs', {
     pageTitle: 'home page',
-    pageHeader: 'Welcome to the home page',
-    pageTitle: 'home page'
+    pageHeader: 'Welcome to the home page'
   })
 });
 app.get('/about',(req,res) => {
@@ -42,6 +41,13 @@ app.get('/bad',(req,res) => {
   res.send({
     errorMessage: "could not find the page"
   });
+});
+app.get('/project',(req,res) => {
+  res.render('project.hbs',{
+    pageHeader: 'Welcome to project page',
+    pageTitle: 'Project page'
+
+  })
 });
 app.listen(port,() => {
   console.log(`listening to port ${port}`);
